@@ -1,0 +1,24 @@
+#cuerpo{
+    display: flex;
+}
+
+#barra{
+    height: 100vh;
+    width: 80px;
+}
+
+#barra img{
+    height: 70px;
+    width: 70px;
+    margin: 5px;
+}
+
+#marco{
+height: 300px;
+width: 400px;
+margin: auto;
+}
+
+#pieFoto{
+    margin-top: 0px;
+}

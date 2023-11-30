@@ -1,0 +1,9 @@
+#titulo{
+font-size: 18px;
+}
+
+#reloj{
+    height: 20px;
+    width: 60px;
+    font-weight: bold;
+    border: 1px solid black;}
