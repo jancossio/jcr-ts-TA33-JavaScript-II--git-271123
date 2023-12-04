@@ -26,9 +26,9 @@
             </div>
           </div>
           <div class="col-12 operts">
-              <div><button class="btn btn-op btn-secondary" onclick="borrarTodo()">DEL</button></div>
-              <div><button class="btn btn-op btn-secondary" onclick="borrarTodo()">CE</button></div>
-              <div><button class="btn btn-op btn-secondary" onclick="borrarTodo()">C</button></div>            
+              <div><button class="btn btn-op btn-secondary" onclick="borrar('DEL')">DEL</button></div>
+              <div><button class="btn btn-op btn-secondary" onclick="borrar('CE')">CE</button></div>
+              <div><button class="btn btn-op btn-secondary" onclick="borrar('C')">C</button></div>            
             </div>
             <div class="col-12 values">
                 <div><button class="btn btn-num btn-secondary" onclick="agregarValor('7')">7</button></div>
@@ -47,7 +47,7 @@
                 <div><button class="btn btn-num btn-secondary" onclick="operacion('-')">-</button></div>
                 <div><button class="btn btn-num btn-secondary" onclick="operacion('1/x')">1/x</button></div>
                 <div><button class="btn btn-num btn-secondary" onclick="agregarValor('0')">0</button></div>
-                <div><button class="btn btn-num btn-secondary" onclick="operacion('+/-')">+/-</button></div>
+                <div><button class="btn btn-num btn-secondary" onclick="negar()">+/-</button></div>
                 <div><button class="btn btn-num btn-secondary" onclick="agregarValor('.')">.</button></div>
                 <div><button class="btn btn-num btn-secondary" onclick="operacion('+')">+</button></div>
                 <div><button class="btn btn-num btn-secondary" onclick="resultado()">=</button></div>             

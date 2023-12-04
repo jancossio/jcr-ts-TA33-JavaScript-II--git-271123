@@ -1,5 +1,4 @@
 var pantalla = document.getElementById("pantalla");
-var tmp_valor = "";
 var operador1 = "";
 var signoOperante = "";
 let escribir = false;
@@ -16,15 +15,32 @@ function agregarValor(valor){
     }
 }
 
-function borrarTodo(){
-    tmp_valor = "";
-    pantalla.innerHTML = "";
-    operador1 = "";
+function borrar(valor){
+
+    switch (valor) {
+        case "DEL":
+            signoOperante = "";
+            pantalla.innerHTML = "";
+            operador1 = "";
+            operador2 = "";
+            escribir = false;
+            break;      
+        case "CE":
+            let tmp = pantalla.innerHTML;
+            tmp = tmp.slice(0, -1);
+            pantalla.innerHTML = tmp;
+            break;    
+        case "C":
+            signoOperante = "";
+            pantalla.innerHTML = "";
+            break;    
+        default:
+            pantalla.innerHTML="Error";
+    }
 }
 
-
 function operacion(operacion){ 
-    operador1 = pantalla.innerHTML;
+    operador1 = parseFloat(pantalla.innerHTML);
     signoOperante = operacion;
 }
 
@@ -34,70 +50,46 @@ function resultado(){
 
     switch (signoOperante) {
         case "+":
-            pantalla.innerHTML = operador1 + operador2;
-            break;
-            
+            pantalla.innerHTML = operador1+operador2;
+            break;      
         case "-":
-            pantalla.innerHTML =  operador1 - operador2;
-            break;
-            
+            pantalla.innerHTML =  operador1-operador2;
+            break;    
         case "x":
-            pantalla.innerHTML =  operador1 * operador2;
-            break;
-            
+            pantalla.innerHTML =  operador1*operador2;
+            break;    
         case "/":     
             if (operador2 == 0.0) {
                 pantalla.innerHTML="INFINITY";
             }else{
-                pantalla.innerHTML =  operador1 / operador2;
+                pantalla.innerHTML = operador1/operador2;
             }
             break;
         case "Raiz":  
-            if (operador2 > 0.0) {
+            if (operador2 < 0.0) {
                 pantalla.innerHTML="Error";
             }
             pantalla.innerHTML = Math.sqrt(operador2);
             break;
-
         case "1/x":  
             if (operador2 == 0.0) {
                 pantalla.innerHTML="INFINITY";
             }
             pantalla.innerHTML = (1/operador2);
             break;
-
             case "%":  
             if (operador2 == 0.0) {
                 pantalla.innerHTML="INFINITY";
             }
             pantalla.innerHTML = (operador1/100)*operador2;
             break;
-
-            case "+/-":  
-            pantalla.innerHTML = -operador2;
-            break;
-            
         default:
-            System.out.println("Error");
+            pantalla.innerHTML="Error";
         }
+        escribir = false;
 }
 
-function suma(op1, op2) {
-    pantalla.innerHTML = op1 + op2;
-}
-	
-function resta(op1, op2) {
-	pantalla.innerHTML =  op1 - op2;
-}
-	
-function multiplicacion( op1, op2) {
-	pantalla.innerHTML =  op1 * op2;
-}
-	
-function division( op1, op2) {
-	pantalla.innerHTML =  op1 / op2;
-}
-
-function raiz( op1, op2) {
-	pantalla.innerHTML =  op1 / op2;
+function negar(){
+    let op =  parseFloat(pantalla.innerHTML);
+    pantalla.innerHTML = -op;
 }
